@@ -219,6 +219,8 @@
             box-shadow: var(--shadow);
             transition: transform .3s, box-shadow .3s;
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
         .pkg-card:hover {
             transform: translateY(-4px);
@@ -280,6 +282,9 @@
 
         .pkg-body {
             padding: 0 28px 28px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
         .pkg-features {
             list-style: none;
@@ -304,7 +309,7 @@
         }
         .pkg-price {
             background: var(--gray-100);
-            margin: 0 -28px -28px;
+            margin: auto -28px -28px;
             padding: 20px 28px;
             text-align: center;
             border-top: 1px solid var(--gray-100);
