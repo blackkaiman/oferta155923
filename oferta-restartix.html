@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofertă Optimizare – RestartiX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563EB;
+            --primary-dark: #1D4ED8;
+            --primary-light: #DBEAFE;
+            --accent: #7C3AED;
+            --accent-light: #EDE9FE;
+            --success: #059669;
+            --success-light: #D1FAE5;
+            --warning: #D97706;
+            --warning-light: #FEF3C7;
+            --dark: #0F172A;
+            --gray-900: #1E293B;
+            --gray-700: #334155;
+            --gray-500: #64748B;
+            --gray-300: #CBD5E1;
+            --gray-100: #F1F5F9;
+            --white: #FFFFFF;
+            --radius: 16px;
+            --radius-sm: 10px;
+            --shadow: 0 1px 3px rgba(0,0,0,.08), 0 4px 24px rgba(0,0,0,.04);
+            --shadow-lg: 0 4px 12px rgba(0,0,0,.08), 0 16px 40px rgba(0,0,0,.06);
+            --shadow-xl: 0 8px 24px rgba(0,0,0,.1), 0 24px 60px rgba(0,0,0,.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--gray-700);
+            background: var(--gray-100);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 40%, #2563EB 100%);
+            color: white;
+            padding: 80px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(124,58,237,.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(37,99,235,.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero .container { position: relative; z-index: 1; }
+        .hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,.15);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+        }
+        .hero__badge::before { content: '⚡'; }
+        .hero h1 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        .hero h1 span {
+            background: linear-gradient(135deg, #60A5FA, #A78BFA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero__sub {
+            font-size: 20px;
+            font-weight: 300;
+            color: rgba(255,255,255,.75);
+            max-width: 550px;
+            margin-bottom: 40px;
+        }
+        .hero__meta {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+        .hero__meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: rgba(255,255,255,.7);
+        }
+        .hero__meta-item strong {
+            color: white;
+            font-weight: 600;
+        }
+        .hero__meta-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        /* ── LAYOUT ── */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        section {
+            padding: 80px 0;
+        }
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        .section-label::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        .section-title {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 16px;
+            letter-spacing: -.5px;
+            line-height: 1.2;
+        }
+        .section-desc {
+            font-size: 17px;
+            color: var(--gray-500);
+            max-width: 600px;
+            margin-bottom: 48px;
+        }
+
+        /* ── CONTEXT SECTION ── */
+        .context { background: white; }
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .problem-card {
+            background: var(--gray-100);
+            border-radius: var(--radius-sm);
+            padding: 24px;
+            border-left: 4px solid var(--warning);
+        }
+        .problem-card__icon {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        .problem-card__title {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 6px;
+            font-size: 15px;
+        }
+        .problem-card__desc {
+            font-size: 14px;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+
+        /* ── PACKAGES ── */
+        .packages { background: var(--gray-100); }
+        .pkg-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .pkg-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform .3s, box-shadow .3s;
+            position: relative;
+        }
+        .pkg-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+        .pkg-card--featured {
+            border: 2px solid var(--primary);
+        }
+        .pkg-card--featured::after {
+            content: '★ RECOMANDAT';
+            position: absolute;
+            top: 16px;
+            right: -28px;
+            background: var(--primary);
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 4px 36px;
+            transform: rotate(45deg);
+        }
+        .pkg-header {
+            padding: 32px 28px 20px;
+        }
+        .pkg-number {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gray-500);
+            margin-bottom: 8px;
+        }
+        .pkg-name {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        .pkg-desc {
+            font-size: 14px;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+        .pkg-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 16px;
+        }
+        .pkg-icon--perf { background: var(--primary-light); }
+        .pkg-icon--checkout { background: var(--accent-light); }
+        .pkg-icon--whatsapp { background: var(--success-light); }
+        .pkg-icon--email { background: var(--warning-light); }
+
+        .pkg-body {
+            padding: 0 28px 28px;
+        }
+        .pkg-features {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+        .pkg-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 8px 0;
+            font-size: 14px;
+            color: var(--gray-700);
+            border-bottom: 1px solid var(--gray-100);
+        }
+        .pkg-features li:last-child { border: none; }
+        .pkg-features li::before {
+            content: '✓';
+            font-weight: 700;
+            color: var(--success);
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .pkg-price {
+            background: var(--gray-100);
+            margin: 0 -28px -28px;
+            padding: 20px 28px;
+            text-align: center;
+            border-top: 1px solid var(--gray-100);
+        }
+        .pkg-price__amount {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--dark);
+        }
+        .pkg-price__note {
+            font-size: 12px;
+            color: var(--gray-500);
+            margin-top: 2px;
+        }
+
+        /* ── TIMELINE ── */
+        .timeline-section { background: white; }
+        .timeline {
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+        .timeline-item {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 36px;
+            position: relative;
+        }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-dot {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border: 3px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+            color: var(--primary);
+            flex-shrink: 0;
+            z-index: 1;
+        }
+        .timeline-content {
+            background: var(--gray-100);
+            border-radius: var(--radius-sm);
+            padding: 20px 24px;
+            flex: 1;
+        }
+        .timeline-content h4 {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+        .timeline-content p {
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+        .timeline-duration {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 2px 10px;
+            border-radius: 50px;
+            margin-top: 8px;
+        }
+
+        /* ── SUMMARY TABLE ── */
+        .summary-section {
+            background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 100%);
+            color: white;
+        }
+        .summary-section .section-label { color: #60A5FA; }
+        .summary-section .section-label::before { background: #60A5FA; }
+        .summary-section .section-title { color: white; }
+        .summary-section .section-desc { color: rgba(255,255,255,.6); }
+
+        .summary-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-bottom: 48px;
+        }
+        .summary-table thead th {
+            background: rgba(255,255,255,.08);
+            padding: 16px 20px;
+            text-align: left;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.5);
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+        .summary-table tbody td {
+            padding: 18px 20px;
+            font-size: 15px;
+            border-bottom: 1px solid rgba(255,255,255,.06);
+            color: rgba(255,255,255,.8);
+        }
+        .summary-table tbody tr:last-child td {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 17px;
+            color: white;
+            background: rgba(255,255,255,.05);
+        }
+        .summary-table tbody td:last-child {
+            text-align: right;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            color: #60A5FA;
+        }
+        .summary-table tbody tr:last-child td:last-child {
+            color: #A78BFA;
+            font-size: 20px;
+        }
+
+        /* ── INFO GRID ── */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .info-card {
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: var(--radius-sm);
+            padding: 24px;
+        }
+        .info-card__icon {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        .info-card__title {
+            font-weight: 700;
+            color: white;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+        .info-card__text {
+            font-size: 13px;
+            color: rgba(255,255,255,.5);
+            line-height: 1.7;
+        }
+
+        /* ── EXCLUSIONS ── */
+        .exclusions { background: white; }
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .incl-list, .excl-list {
+            list-style: none;
+        }
+        .incl-list li, .excl-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 0;
+            font-size: 14px;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        .incl-list li::before {
+            content: '✅';
+            flex-shrink: 0;
+        }
+        .excl-list li::before {
+            content: '✗';
+            font-weight: 700;
+            color: #EF4444;
+            flex-shrink: 0;
+            font-size: 16px;
+        }
+        .col-title {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            background: var(--dark);
+            color: rgba(255,255,255,.5);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+        .footer strong { color: white; }
+
+        /* ── RESPONSIVE: TABLET ── */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 40px; }
+            .pkg-grid { gap: 20px; }
+            .container { padding: 0 24px; }
+            .info-grid { gap: 16px; }
+        }
+
+        /* ── RESPONSIVE: MOBILE ── */
+        @media (max-width: 768px) {
+            /* Hero */
+            .hero { padding: 48px 0 60px; }
+            .hero::before { width: 300px; height: 300px; top: -30%; right: -15%; }
+            .hero::after { width: 200px; height: 200px; }
+            .hero__badge {
+                font-size: 11px;
+                padding: 6px 14px;
+                margin-bottom: 20px;
+            }
+            .hero h1 {
+                font-size: 28px;
+                letter-spacing: -.5px;
+                line-height: 1.2;
+            }
+            .hero__sub {
+                font-size: 15px;
+                line-height: 1.6;
+                margin-bottom: 28px;
+            }
+            .hero__meta {
+                flex-direction: column;
+                gap: 14px;
+            }
+            .hero__meta-item {
+                font-size: 13px;
+                background: rgba(255,255,255,.06);
+                padding: 10px 14px;
+                border-radius: 10px;
+            }
+            .hero__meta-icon {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
+
+            /* Layout */
+            section { padding: 40px 0; }
+            .container { padding: 0 16px; }
+            .section-title { font-size: 24px; margin-bottom: 10px; }
+            .section-desc { font-size: 15px; margin-bottom: 32px; }
+            .section-label { font-size: 11px; letter-spacing: 1.5px; }
+
+            /* Problems */
+            .problems-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .problem-card {
+                padding: 18px;
+                display: flex;
+                gap: 14px;
+                align-items: flex-start;
+            }
+            .problem-card__icon {
+                font-size: 20px;
+                margin-bottom: 0;
+                flex-shrink: 0;
+                margin-top: 2px;
+            }
+
+            /* Packages */
+            .pkg-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .pkg-card { border-radius: 14px; }
+            .pkg-card--featured::after {
+                font-size: 9px;
+                padding: 3px 30px;
+                top: 14px;
+                right: -30px;
+            }
+            .pkg-header { padding: 24px 20px 16px; }
+            .pkg-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+                border-radius: 10px;
+                margin-bottom: 12px;
+            }
+            .pkg-number { font-size: 10px; margin-bottom: 6px; }
+            .pkg-name { font-size: 18px; margin-bottom: 6px; }
+            .pkg-desc { font-size: 13px; }
+            .pkg-body { padding: 0 20px 20px; }
+            .pkg-features li {
+                font-size: 13px;
+                padding: 7px 0;
+                gap: 8px;
+            }
+            .pkg-features li::before { font-size: 13px; }
+            .pkg-price {
+                margin: 0 -20px -20px;
+                padding: 16px 20px;
+            }
+            .pkg-price__amount { font-size: 24px; }
+            .pkg-price__note { font-size: 11px; }
+
+            /* Timeline */
+            .timeline::before { left: 19px; }
+            .timeline-item { gap: 16px; margin-bottom: 20px; }
+            .timeline-dot {
+                width: 40px;
+                height: 40px;
+                font-size: 14px;
+                border-width: 2px;
+            }
+            .timeline-content {
+                padding: 16px 18px;
+                border-radius: 10px;
+            }
+            .timeline-content h4 { font-size: 15px; }
+            .timeline-content p { font-size: 13px; }
+            .timeline-duration { font-size: 11px; }
+
+            /* Summary Table */
+            .summary-section { padding: 40px 0; }
+            .summary-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .summary-table thead th { padding: 12px 14px; font-size: 10px; white-space: nowrap; }
+            .summary-table tbody td { padding: 14px; font-size: 13px; }
+            .summary-table tbody tr:last-child td { font-size: 14px; }
+            .summary-table tbody td:last-child { font-size: 14px; white-space: nowrap; }
+            .summary-table tbody tr:last-child td:last-child { font-size: 16px; }
+
+            /* Info cards */
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .info-card { padding: 18px; }
+            .info-card__icon { font-size: 20px; margin-bottom: 8px; }
+            .info-card__title { font-size: 14px; }
+            .info-card__text { font-size: 12px; }
+
+            /* Inclusions / Exclusions */
+            .two-col {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .col-title { font-size: 17px; margin-bottom: 14px; }
+            .incl-list li, .excl-list li { font-size: 13px; padding: 8px 0; }
+
+            /* Footer */
+            .footer { padding: 28px 0; }
+            .footer p { font-size: 12px; }
+        }
+
+        /* ── RESPONSIVE: SMALL MOBILE ── */
+        @media (max-width: 380px) {
+            .hero h1 { font-size: 24px; }
+            .hero__sub { font-size: 14px; }
+            .section-title { font-size: 21px; }
+            .pkg-name { font-size: 16px; }
+            .container { padding: 0 12px; }
+            .problem-card { padding: 14px; }
+            .pkg-header { padding: 18px 14px 12px; }
+            .pkg-body { padding: 0 14px 14px; }
+            .pkg-price { margin: 0 -14px -14px; padding: 14px; }
+        }
+
+        /* ── PRINT ── */
+        @media print {
+            body { background: white; }
+            .hero { padding: 40px 0 50px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .hero h1 { font-size: 36px; }
+            section { padding: 30px 0; break-inside: avoid; }
+            .pkg-card:hover { transform: none; }
+            .pkg-grid { grid-template-columns: 1fr 1fr; }
+            .summary-section { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══════════ HERO ═══════════ -->
+<div class="hero">
+    <div class="container">
+        <div class="hero__badge">Propunere one-time</div>
+        <h1>Optimizare <span>WooCommerce</span><br>& Ecosistem Digital</h1>
+        <p class="hero__sub">Performanță tehnică, checkout simplificat, automatizări WhatsApp și email marketing — totul într-un pachet unic.</p>
+        <div class="hero__meta">
+            <div class="hero__meta-item">
+                <div class="hero__meta-icon">🏢</div>
+                <div><strong>Client</strong><br>RestartiX</div>
+            </div>
+            <div class="hero__meta-item">
+                <div class="hero__meta-icon">🌐</div>
+                <div><strong>2 Magazine</strong><br>magazinrestartix.ro · zerodurere.net</div>
+            </div>
+            <div class="hero__meta-item">
+                <div class="hero__meta-icon">📅</div>
+                <div><strong>Martie 2026</strong><br>Full Out Media</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════ CONTEXT ═══════════ -->
+<section class="context">
+    <div class="container">
+        <div class="section-label">Context</div>
+        <h2 class="section-title">Probleme identificate</h2>
+        <p class="section-desc">Pe baza auditului și discuțiilor cu echipa RestartiX, am identificat următoarele puncte critice:</p>
+        <div class="problems-grid">
+            <div class="problem-card">
+                <div class="problem-card__icon">🐌</div>
+                <div class="problem-card__title">Viteză redusă la peak-uri</div>
+                <div class="problem-card__desc">Site-urile se mișcă foarte greu la 100-150 utilizatori concurenți în timpul webinarilor. Apar erori de accesare.</div>
+            </div>
+            <div class="problem-card">
+                <div class="problem-card__icon">🛒</div>
+                <div class="problem-card__title">Checkout neoptimizat</div>
+                <div class="problem-card__desc">Flow de achiziție complex, fără simplificare pe mobil. CartFlow necesită optimizare UX și viteză.</div>
+            </div>
+            <div class="problem-card">
+                <div class="problem-card__icon">📱</div>
+                <div class="problem-card__title">Lipsa automatizărilor</div>
+                <div class="problem-card__desc">Nu există flux complet e-commerce: abandon cart, SMS tracking AWB, follow-up post-achiziție, WhatsApp.</div>
+            </div>
+            <div class="problem-card">
+                <div class="problem-card__icon">📧</div>
+                <div class="problem-card__title">Email CTR scăzut</div>
+                <div class="problem-card__desc">Click rate 0.6%–3% — sub potențial. Template-uri neoptimizate, segmentare insuficientă pe 80k abonați.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ PACKAGES ═══════════ -->
+<section class="packages">
+    <div class="container">
+        <div class="section-label">Pachete</div>
+        <h2 class="section-title">Ce includem</h2>
+        <p class="section-desc">Fiecare pachet este independent — poți alege unul sau toate patru.</p>
+
+        <div class="pkg-grid">
+            <!-- PKG 1 -->
+            <div class="pkg-card pkg-card--featured">
+                <div class="pkg-header">
+                    <div class="pkg-icon pkg-icon--perf">🚀</div>
+                    <div class="pkg-number">Pachet 01</div>
+                    <div class="pkg-name">Performanță Tehnică</div>
+                    <div class="pkg-desc">Audit complet, optimizare viteză, stabilitate la trafic de peak pe ambele magazine.</div>
+                </div>
+                <div class="pkg-body">
+                    <ul class="pkg-features">
+                        <li>Audit Core Web Vitals (LCP, FID, CLS)</li>
+                        <li>Configurare Redis cache + page cache</li>
+                        <li>Optimizare imagini → WebP + CDN</li>
+                        <li>Minificare CSS/JS, defer non-critical</li>
+                        <li>Cleanup bază de date WooCommerce</li>
+                        <li>CDN Cloudflare setup pe ambele magazine</li>
+                        <li>Tuning PHP-FPM + OPcache pe VPS</li>
+                        <li>Testare stres 150 utilizatori concurenți</li>
+                        <li>Raport before/after cu metrici concrete</li>
+                    </ul>
+                    <div class="pkg-price">
+                        <div class="pkg-price__amount">_______ EUR</div>
+                        <div class="pkg-price__note">+ TVA · one-time</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PKG 2 -->
+            <div class="pkg-card">
+                <div class="pkg-header">
+                    <div class="pkg-icon pkg-icon--checkout">💳</div>
+                    <div class="pkg-number">Pachet 02</div>
+                    <div class="pkg-name">Checkout & Automatizări</div>
+                    <div class="pkg-desc">Simplificare flow de cumpărare + configurare fluxuri automate e-commerce complete.</div>
+                </div>
+                <div class="pkg-body">
+                    <ul class="pkg-features">
+                        <li>Audit UX checkout + CartFlow</li>
+                        <li>Reducere câmpuri, optimizare mobil</li>
+                        <li>Skip cart → direct checkout (link produs)</li>
+                        <li>Abandoned Cart email sequence (3 emailuri)</li>
+                        <li>Abandoned Cart SMS recovery</li>
+                        <li>SMS automat tracking AWB (Cargus)</li>
+                        <li>Email-uri post-achiziție + follow-up</li>
+                        <li>Documentație flux complet</li>
+                    </ul>
+                    <div class="pkg-price">
+                        <div class="pkg-price__amount">_______ EUR</div>
+                        <div class="pkg-price__note">+ TVA · one-time</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PKG 3 -->
+            <div class="pkg-card">
+                <div class="pkg-header">
+                    <div class="pkg-icon pkg-icon--whatsapp">💬</div>
+                    <div class="pkg-number">Pachet 03</div>
+                    <div class="pkg-name">WhatsApp Business</div>
+                    <div class="pkg-desc">Setup complet WhatsApp Business API cu mesaje automate din WooCommerce.</div>
+                </div>
+                <div class="pkg-body">
+                    <ul class="pkg-features">
+                        <li>Setup WhatsApp Business API (WATI/Twilio)</li>
+                        <li>Template confirmare comandă</li>
+                        <li>Template reminder eveniment (24h + 1h)</li>
+                        <li>Template AWB tracking colet</li>
+                        <li>Template follow-up post-eveniment</li>
+                        <li>Integrare WooCommerce trigger automat</li>
+                        <li>Testare end-to-end</li>
+                        <li>Documentație workflow pentru echipă</li>
+                    </ul>
+                    <div class="pkg-price">
+                        <div class="pkg-price__amount">_______ EUR</div>
+                        <div class="pkg-price__note">+ TVA · one-time (cost provider separat ~50€/lună)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PKG 4 -->
+            <div class="pkg-card">
+                <div class="pkg-header">
+                    <div class="pkg-icon pkg-icon--email">📨</div>
+                    <div class="pkg-number">Pachet 04</div>
+                    <div class="pkg-name">Email Marketing Newsman</div>
+                    <div class="pkg-desc">Optimizare pe infrastructura existentă — segmentare, template-uri, sequences, A/B testing.</div>
+                </div>
+                <div class="pkg-body">
+                    <ul class="pkg-features">
+                        <li>Audit segmente + recomandări noi</li>
+                        <li>Redesign template-uri (mobile-first)</li>
+                        <li>Sequence reminder pre-eveniment (3 emailuri)</li>
+                        <li>Sequence follow-up post-eveniment (3 emailuri)</li>
+                        <li>Sequence welcome lead nou</li>
+                        <li>Optimizare subject lines + preview text</li>
+                        <li>Setup A/B testing pe campanii recurente</li>
+                        <li>Recomandări creștere CTR</li>
+                    </ul>
+                    <div class="pkg-price">
+                        <div class="pkg-price__amount">_______ EUR</div>
+                        <div class="pkg-price__note">+ TVA · one-time</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ TIMELINE ═══════════ -->
+<section class="timeline-section">
+    <div class="container">
+        <div class="section-label">Timeline</div>
+        <h2 class="section-title">Plan de execuție</h2>
+        <p class="section-desc">Estimare ~3-4 săptămâni de la semnare până la handoff complet.</p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot">1</div>
+                <div class="timeline-content">
+                    <h4>Audit & Analiză</h4>
+                    <p>Audit tehnic complet, acces infrastructură, benchmark performanță curentă.</p>
+                    <span class="timeline-duration">⏱ 3-5 zile</span>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">2</div>
+                <div class="timeline-content">
+                    <h4>Implementare Performanță</h4>
+                    <p>Cache, CDN, optimizare DB, imagini, CSS/JS, tuning server.</p>
+                    <span class="timeline-duration">⏱ 4-5 zile</span>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">3</div>
+                <div class="timeline-content">
+                    <h4>Checkout & Automatizări</h4>
+                    <p>Simplificare flow, abandoned cart, tracking AWB, WhatsApp setup.</p>
+                    <span class="timeline-duration">⏱ 5-7 zile</span>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">4</div>
+                <div class="timeline-content">
+                    <h4>Email Marketing</h4>
+                    <p>Segmentare, template-uri, sequences, A/B testing Newsman.</p>
+                    <span class="timeline-duration">⏱ 3-5 zile</span>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">5</div>
+                <div class="timeline-content">
+                    <h4>Testare & Handoff</h4>
+                    <p>Testare end-to-end, raport final, documentație, sesiune handoff 1h cu echipa IT.</p>
+                    <span class="timeline-duration">⏱ 2-3 zile</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ SUMMARY ═══════════ -->
+<section class="summary-section">
+    <div class="container">
+        <div class="section-label">Investiție</div>
+        <h2 class="section-title">Sumar financiar</h2>
+        <p class="section-desc">Fiecare pachet poate fi achiziționat individual. Discount aplicat la pachetul complet.</p>
+
+        <table class="summary-table">
+            <thead>
+                <tr>
+                    <th>Pachet</th>
+                    <th>Descriere</th>
+                    <th>Investiție</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>🚀 Performanță Tehnică</td>
+                    <td>Audit + optimizare viteză + stabilitate peak traffic</td>
+                    <td>_______ EUR</td>
+                </tr>
+                <tr>
+                    <td>💳 Checkout & Automatizări</td>
+                    <td>Checkout simplificat + abandoned cart + tracking AWB</td>
+                    <td>_______ EUR</td>
+                </tr>
+                <tr>
+                    <td>💬 WhatsApp Business</td>
+                    <td>Setup API + template-uri + integrare WooCommerce</td>
+                    <td>_______ EUR</td>
+                </tr>
+                <tr>
+                    <td>📨 Email Newsman</td>
+                    <td>Segmentare + template-uri + sequences + A/B testing</td>
+                    <td>_______ EUR</td>
+                </tr>
+                <tr>
+                    <td>📦 TOTAL PACHET COMPLET</td>
+                    <td>Toate cele 4 pachete incluse</td>
+                    <td>_______ EUR</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-card__icon">💰</div>
+                <div class="info-card__title">Condiții de plată</div>
+                <div class="info-card__text">50% avans la semnarea contractului<br>50% la finalizarea și predarea proiectului</div>
+            </div>
+            <div class="info-card">
+                <div class="info-card__icon">🛡️</div>
+                <div class="info-card__title">Garanție 30 zile</div>
+                <div class="info-card__text">Fix gratuit pentru orice problemă cauzată de optimizările noastre, timp de 30 zile post-livrare.</div>
+            </div>
+            <div class="info-card">
+                <div class="info-card__icon">📋</div>
+                <div class="info-card__title">Livrabile</div>
+                <div class="info-card__text">Raport audit PDF, implementare completă, documentație tehnică, sesiune handoff 1h.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ EXCLUSIONS ═══════════ -->
+<section class="exclusions">
+    <div class="container">
+        <div class="two-col">
+            <div>
+                <h3 class="col-title">✅ Ce include oferta</h3>
+                <ul class="incl-list">
+                    <li>Raport audit tehnic complet (PDF)</li>
+                    <li>Optimizări implementate pe ambele magazine</li>
+                    <li>Documentație tehnică (ce s-a modificat)</li>
+                    <li>Raport before/after (viteze, Core Web Vitals)</li>
+                    <li>Sesiune handoff 1h cu echipa IT RestartiX</li>
+                    <li>Garanție 30 zile post-livrare</li>
+                    <li>Template-uri email & WhatsApp configurate</li>
+                    <li>Fluxuri automatizare testate end-to-end</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="col-title">✗ Ce NU include oferta</h3>
+                <ul class="excl-list">
+                    <li>Mentenanță lunară continuă</li>
+                    <li>Management campanii advertising</li>
+                    <li>Dezvoltare funcționalități noi / features custom</li>
+                    <li>Creare conținut (copywriting, design grafic)</li>
+                    <li>Suport tehnic ongoing (după 30 zile garanție)</li>
+                    <li>Cost provider WhatsApp API (~50€/lună)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+    <div class="container">
+        <p><strong>Full Out Media</strong> · Ofertă confidențială · Martie 2026</p>
+        <p style="margin-top: 8px;">Oferta este valabilă 30 de zile de la data emiterii.</p>
+    </div>
+</div>
+
+</body>
+</html>
